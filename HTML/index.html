@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padaria</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="icon" href="../images/bakeryicon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="content">
+            <nav class="">
+                <p class="brand"><strong class="">Padaria do Fefe</strong></p>
+                <ul class="">
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Features</a></li>
+                    <a href="#.html"><button class="plano-vip">Plano Vip</button></a> 
+                    <button id="darkMode" onclick="darkModeFunc()">&#127769;</button>
+                    <a href="cadastro.html"><button class="login">Login</button></a>
+                </ul>
+            </nav>
+            <div class="header-block">
+                <div class="text">
+                    <h2>Pão quentinho a toda hora!</h2>
+                    <p>Seja bem vind@ para a pradaria do Fefe! Aqui você encontrará gostosuras como pão de queijo com queijo, deliciosos bolos de chocolate</p>
+                </div>
+                <img src="../images/cafedamanha.png" alt="Imagem aleatória">
+            </div>
+        </div>
+    </header>
+
+    <script>
+        var isDarkMode = false;
+        var valorCompra = 0;
+        const darkModeFunc = () =>{
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            isDarkMode = !isDarkMode;
+            if(isDarkMode){
+                darkMode.innerHTML = "&#127761;";
+            }else{
+                darkMode.innerHTML = "&#127769;";
+            }
+        }
+        const addItem = (valorItem) =>{
+            var ver = confirm(`Você realmente deseja adicionar esse item ao carrinho? \n Valor: R$ ${valorItem}`);
+            if(ver){
+                valorCompra += valorItem;
+                valorTotal.innerHTML = valorCompra;
+            }
+            
+        }
+    </script>
+
+    <section class="catalog" id="catalog">
+        <div class="content">
+            <div class="title-wrapper-catalog">
+                <p>Encontre o que deseja!</p>
+                <h3>Catálogo</h3>
+            </div>
+
+            <div class="filter-card">
+                <input type="text" class="search-input" placeholder="Pesquise por gostosuras">
+                <button class="search-button">Pesquisar</button>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="card-item">
+                    <img src="../images/paumdequexo.png" alt="Pãozinho de Quexo">
+                    <div class="card-content">
+                        <h3>Pão de Queijo com Queijo</h3>
+                        <p>Pão de queijo feito com queijo</p>
+                        <button type="button" class="solicitar" onclick="addItem(15.5)" >Solicitar</button>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="../images/paozinho.png" alt="Pãozinho de Quexo">
+                    <div class="card-content">
+                        <h3>Pão Quentinho</h3>
+                        <p>Aquele pão quentinho, hmmm, chega a manteiga derrete</p>
+                        <button type="button" class="solicitar" onclick="addItem(45)">Solicitar</button>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="../images/bolinho.png" alt="Pãozinho de Quexo">
+                    <div class="card-content">
+                        <h3>Bolo</h3>
+                        <p>Bolo</p>
+                        <button type="button" class="solicitar" onclick="addItem(4)">Solicitar</button>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="../images/croissant.png" alt="Pãozinho de Quexo">
+                    <div class="card-content">
+                        <h3>Croissant Sem Recheio</h3>
+                        <p>Croissant de chocolate sem chocolate.</p>
+                        <button type="button" class="solicitar" onclick="addItem(12.3)">Solicitar</button>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="../images/cafezinho.png" alt="Pãozinho de Quexo">
+                    <div class="card-content">
+                        <h3>Quero caféeee!!</h3>
+                        <p>Café expresso sem açúcar.</p>
+                        <button type="button" class="solicitar" onclick="addItem(20.5)">Solicitar</button>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="../images/rocambole.png" alt="Pãozinho de Quexo">
+                    <div class="card-content">
+                        <h3>Rocambole</h3>
+                        <p>O rocambole é de dar água na boca! E a bomba, então, nem se fala!</p>
+                        <button type="button" class="solicitar" onclick="addItem(12.4)">Solicitar</button>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="../images/bolodemulango.png" alt="Pãozinho de Quexo">
+                    <div class="card-content">
+                        <h3>Hmm, Bolo de Mulango</h3>
+                        <p>Bolo feito de morango.</p>
+                        <button type="button" class="solicitar" onclick="addItem(18.9)">Solicitar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="valorCompra">
+        <p class="content">Valor no carrinho: </p>
+        <p id="valorTotal"></p>
+    </div>
+
+    <footer>
+        <div class="main">
+            <div class="content footer-links">
+                <div class="footer-company">
+                    <h4>Compania ARFE</h4>
+                    <h6>Sobre</h6>
+                    <h6>Contato</h6>
+                </div>
+                <div class="footer-social">
+                    <h4>Ficar Conectado</h4>
+                    <div class="social-icons">
+                        <img src="../images/instagram_icon.png" alt="Segue nois">
+                        <img src="../images/facebooki.png" alt="Me siga">
+                    </div>
+                </div>
+                <div class="footer-contact">
+                        <h4>Contate - me</h4>
+                        <h6>(31) 4159-2653</h6>
+                        <h6>email@gmail.com</h6>
+                        <h6>Algum Lugar</h6>
+                </div>
+            </div>
+            <div class="last">
+                Felipe Soares - Cofundador do banco ARFE
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

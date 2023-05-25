@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano Vip</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="icon" href="../images/vipicon.png" type="image/icon">
+    <style>
+        header{
+            height: 100px;
+        }
+
+        section {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section .formulario {
+            width: 50%;
+            min-width: 700px;
+            background-color: var(--green);
+            margin: 10px;
+            border-radius: 10px;
+            margin-top: 30px;
+            color: white;
+            transition: 1s;
+            border: 2px solid var(--darkgreen);
+            box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.9);
+        }
+
+        input , textarea {
+            width: 70%;
+            border-radius: 5px;
+            border: none;
+            margin-top: 5px;
+            border: 1px solid var(--darkgreen);
+            padding: 4px;
+        }
+
+        textarea{
+            border-radius: 10px;
+            min-width: 400px;
+            min-height: 130px;
+            max-height: 200px;
+            max-width: 600px;
+        }
+
+        label {
+            margin-top: 12px;
+        }
+
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid var(--lightgreen);
+            margin-top: 8px;
+        }
+
+        .Doces {
+            width: 5%;
+        }
+
+        .radio-estrelas{
+            width: 5%;
+        }
+
+        .gostos {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .linha {
+            display: flex;
+            flex-direction: row;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 12px;
+            height: 15px;
+        }
+
+        input[type="radio"]{
+            margin-top: 16px;
+            height: 15px;
+        }
+
+        #envio{
+            border-radius: 8px;
+            background-color: var(--lightiestgreen);
+            padding: 8px;
+            width: 30%;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var isDarkMode = false;
+        const darkModeFunc = () =>{
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            isDarkMode = !isDarkMode;
+            if(isDarkMode){
+                darkMode.innerHTML = "&#127761;";
+            }else{
+                darkMode.innerHTML = "&#127769;";
+            }
+        }
+        const limparFormulario = () =>{
+            var formulario = document.getElementById("formulario");
+            formulario.reset();
+        }
+    </script>
+    <header>
+        <div class="content">
+            <nav class="">
+                <a href="index.html" class="brand"><strong class="">Padaria do Fefe</strong></a>
+                <ul class="">
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Features</a></li>
+                    <button id="darkMode" onclick="darkModeFunc()">&#127769;</button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <form class="formulario" id="formulario">
+            <fieldset class="dadospessoais">
+                <legend>Dados Pessoais</legend>
+                <label for="name" style="margin-top: 5px">Digite o seu nome: </label>
+                <input type="text" id="CPF">
+                <label for="CPF">Digite o seu CPF: </label>
+                <input type="text" id="name">
+                <label for="age">Digite a sua idade: </label>
+                <input type="text" id="age">
+                <label for="email">Digite o seu e-mail</label>
+                <input type="email" id="email" name="email">
+                <label for="password">Digite sua senha: </label>
+                <input type="password" name="password" id="password">
+                <label for="confirmpassword">Confirme sua senha: </label>
+                <input type="password" id="confirmpassword" name="confirmpassword">
+            </fieldset>
+            <fieldset class="interesses">
+                <legend>Interesses</legend>
+                <div class="gostos">
+                    <label for="sabores">Escolha as suas preferências: </label>
+                    <div class="linha">
+                        <input type="checkbox" value="Doces" class="Doces"><label for="Doces">Doces</label>
+                    </div>
+                    <div class="linha">
+                        <input type="checkbox" value="Doces" class="Doces"><label for="Doces">Pães</label>
+                    </div>
+                    <div class="linha">
+                        <input type="checkbox" value="Doces" class="Doces"><label for="Doces">Bolos</label>
+                    </div>
+                    <div class="linha">
+                        <input type="checkbox" value="Doces" class="Doces"><label for="Doces">Bebidas</label>
+                    </div>
+                    <div class="linha">
+                        <input type="checkbox" value="Doces" class="Doces"><label for="Doces">Biscoitos</label>
+                    </div>
+                </div>
+                <label for="frequencia">Com que frequencia você frequentaria a Padaria do Fefe: </label>
+                <input list="frequencia" name="frequencia" id="frequencias">
+                <datalist id="frequencia">
+                    <option value="Todo Dia"></option>
+                    <option value="3 vezes por semana"></option>
+                    <option value="Uma vez por semana"></option>
+                    <option value="Raramente"></option>
+                    <option value="Nunca"></option>
+                </datalist>
+            </fieldset>
+            <fieldset class="feedback">
+                <legend>Feedback</legend>
+                <label for="estrelas">Avalie este serviço de 1 a 5 estrelas: </label>
+                <div class="estrelas">
+                    <div class="linha">
+                        <input type="radio" name="estrelas" class="radio-estrelas"><label for="estrelas" class="icone-estrela">&#11088;</label>
+                    </div>
+                    <div class="linha">
+                        <input type="radio" name="estrelas" class="radio-estrelas"><label for="estrelas" class="icone-estrela">&#11088;&#11088;</label>
+                    </div>
+                    <div class="linha">
+                        <input type="radio" name="estrelas" class="radio-estrelas"><label for="estrelas" class="icone-estrela">&#11088;&#11088;&#11088;</label>
+                    </div>
+                    <div class="linha">
+                        <input type="radio" name="estrelas" class="radio-estrelas"><label for="estrelas" class="icone-estrela">&#11088;&#11088;&#11088;&#11088;</label>
+                    </div>
+                    <div class="linha">
+                        <input type="radio" name="estrelas" class="radio-estrelas"><label for="estrelas" class="icone-estrela">&#11088;&#11088;&#11088;&#11088;&#11088;</label>
+                    </div>
+                </div>
+                <label for="Sugestao">Escreva aqui comentários e sugestões: </label>
+                <textarea name="sugestao" id="sugestao" cols="30" rows="10"></textarea>
+            </fieldset>
+            <input type="submit" value="Efetuar Cadastro" id="envio" onclick="limparFormulario()">
+        </form>
+    </section>
+
+</body>
+
+</html>
